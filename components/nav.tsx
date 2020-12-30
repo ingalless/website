@@ -17,7 +17,7 @@ export default function Nav() {
                 width={50}
                 height={50}
               />
-              <span>Jonny Ingall</span>
+              <span>Jonathan Ingall</span>
             </a>
           </Link>
         </li>

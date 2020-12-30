@@ -1,24 +1,30 @@
 import Nav from "../components/nav";
+import Marquee from "react-double-marquee";
 
 export default function IndexPage() {
   return (
     <>
-      <div className="min-h-landing">
+      <div className="h-96 pb-16">
         <Nav />
         <div className="py-20 px-8 space-y-6 container mx-auto">
-          <h1 className="text-6xl text-white">
-            Hey! I'm <span className="text-purple-300 font-bold">Jonny</span>
+          <h1 className="text-6xl text-purple-300 font-bold leading-none md:leading-6">
+            Hey, I'm Jonny.
           </h1>
-          <h2 className="text-gray-100 text-3xl">Maker of all things web</h2>
+          <h2 className="text-gray-100 text-3xl">
+            Web Developer in Peterborough
+          </h2>
+          <h3 className="text-purple-300 text-2xl">
+            Building websites that grow with your business
+          </h3>
         </div>
       </div>
-      <div className="flex justify-center">
+      <div className="hidden justify-center">
         <svg
           className="animate-bounce w-6 h-6 text-purple-100"
           fill="none"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
