@@ -11,7 +11,7 @@ export default function IndexPage() {
             Hey, I'm Jonny.
           </h1>
           <h2 className="text-gray-100 text-3xl">
-            Web Developer in Peterborough
+            Web Developer
           </h2>
           <h3 className="text-purple-300 text-2xl">
             Building websites that grow with your business
