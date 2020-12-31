@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const links = [{ href: "https://github.com", label: "GitHub" }];
+const links = [
+  { href: "https://github.com/ingalless", label: "GitHub" },
+  { href: "https://twitter.com/ingalless1", label: "Twitter" },
+];
 
 export default function Nav() {
   return (
@@ -17,7 +20,7 @@ export default function Nav() {
                 width={50}
                 height={50}
               />
-              <span>Jonathan Ingall</span>
+              <span>Foveal Development</span>
             </a>
           </Link>
         </li>

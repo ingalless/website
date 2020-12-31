@@ -10,12 +10,11 @@ export default function IndexPage() {
           <h1 className="text-6xl text-purple-300 font-bold leading-none md:leading-6">
             Hey, I'm Jonny.
           </h1>
-          <h2 className="text-gray-100 text-3xl">
-            Web Developer
-          </h2>
+          <h2 className="text-gray-100 text-3xl">Web Developer</h2>
           <h3 className="text-purple-300 text-2xl">
             Building websites that grow with your business
           </h3>
+          <p className="text-gray-500 text-xl">More to come soon...</p>
         </div>
       </div>
       <div className="hidden justify-center">
