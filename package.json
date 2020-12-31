@@ -9,10 +9,11 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "next": "latest",
+    "next-themes": "^0.0.10",
     "postcss": "^8.2.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-double-marquee": "^1.0.6"
+    "react-dark-mode-toggle": "^0.0.10",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
