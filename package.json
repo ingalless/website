@@ -9,10 +9,8 @@
   "dependencies": {
     "autoprefixer": "^10.1.0",
     "next": "latest",
-    "next-themes": "^0.0.10",
     "postcss": "^8.2.2",
     "react": "^17.0.1",
-    "react-dark-mode-toggle": "^0.0.10",
     "react-dom": "^17.0.1"
   },
   "devDependencies": {

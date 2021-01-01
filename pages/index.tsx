@@ -16,15 +16,15 @@ export default function IndexPage() {
       <div className="">
         <Nav />
         <div className="container mx-auto">
-          <div className="py-20 px-8 space-y-6 mx-auto block lg:grid lg:grid-cols-2 gap-x-16 max-w-7xl">
+          <div className="pt-6 pb-12 lg:py-20 px-8 space-y-6 mx-auto block lg:grid lg:grid-cols-2 gap-x-16 max-w-7xl">
             <div className="flex flex-col justify-center space-y-8">
-              <h2 className="text-6xl text-gray-800 dark:text-gray-200 tracking-tighter font-semibold">
+              <h2 className="text-6xl text-gray-800 tracking-tighter font-semibold">
                 Bespoke Solutions That{" "}
                 <span className="text-blue-600">
                   Drive Your Business To Success
                 </span>
               </h2>
-              <h3 className="text-gray-700 dark:text-gray-200 text-lg leading-snug">
+              <h3 className="text-gray-700 text-lg leading-snug">
                 The web becomes more and more complex each day. Making a bad
                 decision impacts your company's success. Don't let your tech
                 slow you down.
