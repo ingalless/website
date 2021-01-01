@@ -26,15 +26,8 @@ export default function Nav() {
       <ul className="flex justify-between items-center p-8">
         <li>
           <Link href="/">
-            <a className="text-purple-700 dark:text-purple-200 font-semibold no-underline flex justify-between items-center space-x-2">
-              <Image
-                className="rounded-full"
-                src="/me.jpg"
-                alt="Picture of the author"
-                width={50}
-                height={50}
-              />
-              <span>Foveal Development</span>
+            <a className="text-blue-700 text-lg font-bold no-underline flex justify-between items-center space-x-2">
+              <h1>Foveal Development</h1>
             </a>
           </Link>
         </li>
@@ -43,20 +36,12 @@ export default function Nav() {
             <li key={`${href}${label}`}>
               <a
                 href={href}
-                className="no-underline font-semibold text-purple-700 dark:text-purple-200"
+                className="no-underline font-semibold text-gray-700 dark:text-gray-200"
               >
                 {label}
               </a>
             </li>
           ))}
-          <li key="toggle" className="flex justify-center">
-            <DarkModeToggle
-              size="50px"
-              checked={theme === "dark"}
-              onChange={toggleTheme}
-              speed={2}
-            />
-          </li>
         </ul>
       </ul>
     </nav>
