@@ -79,7 +79,7 @@ export default function IndexPage() {
           <div>
             <h4 className="text-2xl font-semibold text-gray-800">JAMStack</h4>
             <p>
-              The JAMStack is one of the web's emmerging technologies - and for
+              The JAMStack is one of the web's emerging technologies - and for
               good reason. Users love fast and highly-available websites.
               Businesses love only paying for the processing they need. It's a
               win-win!
