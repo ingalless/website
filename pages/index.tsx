@@ -20,15 +20,15 @@ export default function IndexPage() {
             <div className="flex flex-col justify-center space-y-8">
               <h2 className="text-6xl text-gray-800 tracking-tighter font-semibold">
                 Bespoke Solutions That{" "}
-                <span className="text-blue-600">
+                <span className="animate-fade-in text-blue-600">
                   Drive Your Business To Success
                 </span>
               </h2>
-              <h3 className="text-gray-900 text-lg font-medium leading-snug">
+              <h3 className="text-gray-900 text-lg leading-snug">
                 2020 has demonstrated that having an online presence is more
                 important than ever before.
                 <br />
-                <span className="font-bold">
+                <span className="font-semibold">
                   Let's keep your business succeeding together.
                 </span>
               </h3>
