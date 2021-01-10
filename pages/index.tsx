@@ -113,7 +113,7 @@ export default function IndexPage() {
           </div>
         </div>
       </Section>
-      <Section>
+      <Section fullWidth={true}>
         <div id="contact" className="max-w-6xl mx-auto">
           <Contact />
         </div>
@@ -125,11 +125,23 @@ export default function IndexPage() {
   );
 }
 
-const Section: React.FC<{ bgImage?: string }> = ({ children, bgImage }) => {
+interface SectionProps {
+  bgImage?: string;
+  fullWidth?: boolean;
+}
+const Section: React.FC<SectionProps> = ({
+  children,
+  bgImage,
+  fullWidth = false,
+}) => {
   const style = bgImage ? { background: bgImage } : null;
   return (
     <div style={style}>
-      <section className="my-16 container mx-auto py-16 px-8">
+      <section
+        className={`my-16 container mx-auto py-16 ${
+          fullWidth ? "px-2" : "px-8"
+        }`}
+      >
         {children}
       </section>
     </div>
