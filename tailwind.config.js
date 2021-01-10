@@ -10,7 +10,7 @@ module.exports = {
       keyframes: {
         "fade-in": {
           from: { color: colors.coolGray[800] },
-          to: { color: colors.blue[600] },
+          to: { color: colors.blue[800] },
         },
       },
       animation: {

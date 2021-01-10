@@ -80,7 +80,7 @@ const Input = ({ type, name, placeholder, icon }: InputProps) => {
         type={type}
         className={`block ${
           icon ? "pl-9" : ""
-        } transition-colors focus:outline-none p-2 focus:shadow-inner shadow-sm focus:ring-indigo-500 focus:border-blue-500 w-full sm:text-sm border border-gray-300 rounded-sm`}
+        } transition-colors focus:outline-none p-2 focus:shadow-inner shadow-sm focus:border-blue-900 w-full sm:text-sm border border-gray-300 rounded-sm`}
       />
     </div>
   );
@@ -93,7 +93,7 @@ interface TextAreaProps {
 const TextArea = ({ name, placeholder }: TextAreaProps) => {
   return (
     <textarea
-      className="transition-colors p-2 focus:shadow-inner shadow-sm focus:outline-none focus:border-blue-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-sm"
+      className="transition-colors p-2 focus:shadow-inner shadow-sm focus:outline-none focus:border-blue-900 mt-1 block w-full sm:text-sm border border-gray-300 rounded-sm"
       placeholder={placeholder}
       name={name}
       id={name}

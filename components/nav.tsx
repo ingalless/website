@@ -13,7 +13,7 @@ export default function Nav() {
       <ul className="flex justify-between items-center p-8">
         <li>
           <Link href="/">
-            <a className="text-blue-600 text-lg font-bold no-underline flex justify-between items-center space-x-2">
+            <a className="text-blue-800 text-lg font-bold no-underline flex justify-between items-center space-x-2">
               <h1>Foveal Development</h1>
             </a>
           </Link>
