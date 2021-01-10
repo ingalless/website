@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { useEffect } from "react";
 import { logEvent } from "../analytics";
+import Contact from "../components/contact";
 import Layout from "../components/layout";
 import Nav from "../components/nav";
 import { LandingIllustration } from "../svg";
@@ -13,7 +15,7 @@ export default function IndexPage() {
       title="Foveal Development - Bespoke Web Development"
       description="Bespoke Web Development based in Peterborough, Cambridgeshire. We provide solutions that grow with your business."
     >
-      <div className="">
+      <div>
         <Nav />
         <div className="container mx-auto">
           <div className="pt-6 pb-12 lg:py-20 px-8 space-y-6 mx-auto block lg:grid lg:grid-cols-2 gap-x-16 max-w-7xl">
@@ -33,9 +35,11 @@ export default function IndexPage() {
                 </span>
               </h3>
               <div className="block">
-                <button className="md:max-w-xs rounded-sm bg-gray-500  text-white px-4 py-2 font-bold">
-                  Accepting Projects Soon
-                </button>
+                <Link href="#contact">
+                  <a className="md:max-w-xs rounded-sm bg-blue-500 hover:bg-blue-600 transition-colors text-white px-4 py-2 font-bold">
+                    Get in Touch
+                  </a>
+                </Link>
               </div>
             </div>
             <div className="hidden lg:flex flex-col justify-center space-y-8">
@@ -110,10 +114,8 @@ export default function IndexPage() {
         </div>
       </Section>
       <Section>
-        <div className="text-center">
-          <span className="md:max-w-xs rounded-sm bg-blue-500 text-white p-4 font-bold">
-            Accepting Projects Soon
-          </span>
+        <div id="contact" className="max-w-6xl mx-auto">
+          <Contact />
         </div>
       </Section>
       <footer className="pt-16 pb-4 px-8 text-gray-600 text-center font-hairline font-sm">

@@ -10,6 +10,7 @@
     "autoprefixer": "^10.1.0",
     "next": "latest",
     "postcss": "^8.2.2",
+    "rc-field-form": "^1.17.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
