@@ -118,7 +118,7 @@ export default function IndexPage() {
           <Contact />
         </div>
       </Section>
-      <footer className="pt-16 pb-4 px-8 text-gray-600 text-center font-hairline font-sm">
+      <footer className="-mt-16 pb-4 px-8 text-gray-600 text-center font-hairline font-sm">
         <span>&copy; Foveal Development 2021</span>
       </footer>
     </Layout>
