@@ -1,6 +1,10 @@
 const colors = require("tailwindcss/colors");
 module.exports = {
-  purge: ["./components/**/*.{js,ts,jsx,tsx}", "./pages/**/*.{js,ts,jsx,tsx}"],
+  purge: [
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./svg/**/*.tsx",
+  ],
   theme: {
     extend: {
       keyframes: {
