@@ -27,7 +27,7 @@ export default function Contact() {
     }
   };
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 bg-white rounded shadow-2xl border-separate overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 bg-white rounded shadow-xl border-separate overflow-hidden">
       <div className="space-y-4 bg-blue-900 text-white p-8">
         <h2 className="text-4xl tracking-tight font-medium text-left pb-4">
           Ready to Succeed?
