@@ -85,7 +85,8 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   transporter.sendMail(emailToMe, (error) => {
     if (error) {
       console.error("Failed to send to me", error);
+    } else {
+      res.status(200).end();
     }
   });
-  res.status(200).end();
 };
