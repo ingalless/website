@@ -1,6 +1,23 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import rateLimit from "express-rate-limit";
 import nodemailer from "nodemailer";
 import validator from "email-validator";
+
+const limiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute
+  max: 5, // limit each IP to 100 requests per windowMs
+});
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 const confirmationMessage = (name: string) => `Hey ${name}
 
@@ -37,7 +54,7 @@ Sent from https://fovealdev.com
 
 const { MAIL_HOST, MAIL_PORT, MAIL_USER, MAIL_PASSWORD } = process.env;
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const data = req.body;
   if (!data.name) {
     return res.status(422).end();
@@ -54,6 +71,9 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   if (!data.about) {
     return res.status(422).end();
   }
+
+  await runMiddleware(req, res, limiter);
+
   const transporter = nodemailer.createTransport({
     host: MAIL_HOST,
     port: MAIL_PORT,

@@ -1,5 +1,5 @@
 import Form, { Field, useForm } from "rc-field-form";
-import { Email, User, Company, Info, Error, Success } from "../svg";
+import { Email, User, Company, Info, Error, Success, Spinner } from "../svg";
 import axios from "axios";
 import { useState } from "react";
 interface FormValues {
@@ -8,15 +8,17 @@ interface FormValues {
   company?: string;
   about?: string;
 }
-type FormState = "success" | "error";
+type FormState = "idle" | "loading" | "success" | "error";
 export default function Contact() {
   const [form] = useForm<FormValues>();
-  const [submissionState, setSubmissionState] = useState<FormState>();
+  const [submissionState, setSubmissionState] = useState<FormState>("idle");
   const submit = async () => {
     try {
+      setSubmissionState("loading");
       const values = await form.validateFields();
       await axios.post("/api/contact", values);
       setSubmissionState("success");
+      form.resetFields();
     } catch (error) {
       setSubmissionState("error");
       if (error.response) {
@@ -68,12 +70,18 @@ export default function Contact() {
           <Field name="about" rules={[{ required: true }]}>
             <TextArea placeholder="Tell us about your project." />
           </Field>
-          {submissionState === undefined && <InfoBox />}
+          {submissionState === "idle" && <InfoBox />}
+          {submissionState === "loading" && <LoadingBox />}
           {submissionState === "success" && <SuccessBox />}
           {submissionState === "error" && <ErrorBox />}
           <button
+            disabled={submissionState === "loading"}
             onClick={submit}
-            className="rounded-sm bg-blue-900 hover:bg-blue-800 transition-colors text-white px-4 py-2 font-bold"
+            className={`rounded-sm ${
+              submissionState === "loading"
+                ? "text-gray-700 bg-gray-300 hover:bg-gray-300"
+                : "text-white bg-blue-900 hover:bg-blue-800"
+            } transition-colors px-4 py-2 font-bold`}
           >
             Send
           </button>
@@ -93,6 +101,11 @@ const ErrorBox = () => (
   <div className="border p-2 flex place-items-center space-x-2 border-red-200 bg-red-100 text-red-900 font-semibold rounded text-sm">
     <Error />
     <p>Please make sure all the above fields are filled in correctly</p>
+  </div>
+);
+const LoadingBox = () => (
+  <div className="border p-2 flex w-full justify-center items-center space-x-2 border-blue-100 bg-blue-50 text-blue-900 font-semibold rounded text-sm">
+    <Spinner />
   </div>
 );
 const InfoBox = () => (

@@ -10,6 +10,7 @@
     "autoprefixer": "^10.1.0",
     "axios": "^0.21.1",
     "email-validator": "^2.0.4",
+    "express-rate-limit": "^5.2.3",
     "next": "latest",
     "nodemailer": "^6.4.17",
     "postcss": "^8.2.2",
