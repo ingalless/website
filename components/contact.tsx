@@ -14,7 +14,7 @@ export default function Contact() {
   const [submissionState, setSubmissionState] = useState<FormState>();
   const submit = async () => {
     try {
-      const values = await form.getFieldsValue();
+      const values = await form.validateFields();
       await axios.post("/api/contact", values);
       setSubmissionState("success");
     } catch (error) {
@@ -52,21 +52,21 @@ export default function Contact() {
       </div>
       <Form form={form} className="flex flex-col space-y-6 p-8">
         <>
-          <Field name="name">
+          <Field name="name" rules={[{ required: true }]}>
             <Input icon={<User />} placeholder="Name" type="text" />
           </Field>
-          <Field name="email">
+          <Field name="email" rules={[{ required: true }]}>
             <Input
               icon={<Email />}
               type="email"
               placeholder="john@example.com"
             />
           </Field>
-          <Field name="company">
+          <Field name="company" rules={[{ required: true }]}>
             <Input icon={<Company />} type="text" placeholder="ACME Inc" />
           </Field>
-          <Field name="about">
-            <TextArea name="about" placeholder="Tell us about your project." />
+          <Field name="about" rules={[{ required: true }]}>
+            <TextArea placeholder="Tell us about your project." />
           </Field>
           {submissionState === undefined && <InfoBox />}
           {submissionState === "success" && <SuccessBox />}
@@ -136,22 +136,14 @@ const Input = ({
 };
 
 interface TextAreaProps {
-  name: string;
   placeholder?: string;
   value?: string;
 }
-const TextArea = ({
-  name,
-  placeholder,
-  value = "",
-  ...props
-}: TextAreaProps) => {
+const TextArea = ({ placeholder, value = "", ...props }: TextAreaProps) => {
   return (
     <textarea
       className="text-gray-600 transition-colors p-2 focus:shadow-inner shadow-sm focus:outline-none focus:border-blue-900 mt-1 block w-full sm:text-sm border border-gray-300 rounded-sm"
       placeholder={placeholder}
-      name={name}
-      id={name}
       cols={30}
       rows={10}
       value={value}

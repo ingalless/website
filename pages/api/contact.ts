@@ -42,7 +42,10 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   if (!data.name) {
     return res.status(422).end();
   }
-  if (!data.email && !validator.validate(data.email)) {
+  if (!data.email) {
+    return res.status(422).end();
+  }
+  if (!validator.validate(data.email)) {
     return res.status(422).end();
   }
   if (!data.company) {
