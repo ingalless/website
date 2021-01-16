@@ -33,12 +33,12 @@ export default function Contact() {
           Ready to Succeed?
         </h2>
         <p>
-          Let us know your product idea or big problem you want solving. We're
-          here if you just want a technical discussion too.
+          We'd love to hear how we can help your company. We're also here if you
+          just want a technical discussion.
         </p>
         <p>
           Please fill in the contact form as completely as possible to ensure we
-          can provide you with the best answer possible.
+          can provide you with the best solution possible.
         </p>
         <p>
           Alternatively write to us directly at{" "}
@@ -66,10 +66,7 @@ export default function Contact() {
             <Input icon={<Company />} type="text" placeholder="ACME Inc" />
           </Field>
           <Field name="about">
-            <TextArea
-              name="about"
-              placeholder="Tell us about your project. Be as descriptive as possible."
-            />
+            <TextArea name="about" placeholder="Tell us about your project." />
           </Field>
           {submissionState === undefined && <InfoBox />}
           {submissionState === "success" && <SuccessBox />}
