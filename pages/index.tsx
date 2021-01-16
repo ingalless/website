@@ -1,15 +1,10 @@
 import Link from "next/link";
-import { useEffect } from "react";
-import { logEvent } from "../analytics";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
 import Nav from "../components/nav";
 import { LandingIllustration } from "../svg";
 
 export default function IndexPage() {
-  useEffect(() => {
-    logEvent({ page: "Home", type: "VISIT" });
-  }, []);
   return (
     <Layout
       title="Foveal Development - Bespoke Web Development"

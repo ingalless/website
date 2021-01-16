@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "autoprefixer": "^10.1.0",
+    "axios": "^0.21.1",
     "next": "latest",
+    "nodemailer": "^6.4.17",
     "postcss": "^8.2.2",
     "rc-field-form": "^1.17.3",
     "react": "^17.0.1",
