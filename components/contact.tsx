@@ -89,7 +89,7 @@ export default function Contact() {
 const SuccessBox = () => (
   <div className="border p-2 flex place-items-center space-x-2 border-green-100 bg-green-50 text-green-900 font-semibold rounded text-sm">
     <Success />
-    <p>We've got your email! We will be in touch shortly.</p>
+    <p>We've got your email! You should receive a confirmation email soon.</p>
   </div>
 );
 const ErrorBox = () => (

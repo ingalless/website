@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
+import validator from "email-validator";
 
 const confirmationMessage = (name: string) => `Hey ${name}
 
@@ -41,7 +42,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
   if (!data.name) {
     return res.status(422).end();
   }
-  if (!data.email) {
+  if (!data.email && !validator.validate(data.email)) {
     return res.status(422).end();
   }
   if (!data.company) {
