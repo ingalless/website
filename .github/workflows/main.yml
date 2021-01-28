@@ -19,11 +19,11 @@ jobs:
       
       - name: Install heroku cli
         run: sudo snap install --classic heroku
-      - name: Heroku Login
+      - name: Add remote
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
-        run: heroku login
-      - name: Add remote
         run: heroku git:remote -a ingalless-website  
       - name: Deploy backend to Heroku
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
         run: git subtree push --prefix strapi heroku main
