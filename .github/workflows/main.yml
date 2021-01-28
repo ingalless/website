@@ -20,10 +20,10 @@ jobs:
       - name: Git deploy to Heroku
         # You may pin to the exact commit or the version.
         # uses: onekiloparsec/heroku-node-deploy-subfolder@85d5701f800be8126e12b7f6f47e965c71f67b56
-        uses: CDNievas/heroku-action@v1.0
+        uses: AkhileshNS/heroku-deploy@v3.8.8
         with:
           # Your Heroku API key. This will be used for authentication. You can find it in your Heroku account settings
-          api_key: ${{ secrets.HEROKU_TOKEN }}
+          heroku_api_key: ${{ secrets.HEROKU_TOKEN }}
           # The email of your Heroku account (needed for auth).
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
           # The app name to use for deploying/updating
