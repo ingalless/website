@@ -16,17 +16,9 @@ jobs:
       #    vercel-org-id: ${{ secrets.ORG_ID}}  #Required
       #    vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
       #    working-directory: ./frontend
-
-      - name: Git deploy to Heroku
-        # You may pin to the exact commit or the version.
-        # uses: onekiloparsec/heroku-node-deploy-subfolder@85d5701f800be8126e12b7f6f47e965c71f67b56
-        uses: AkhileshNS/heroku-deploy@v3.8.8
-        with:
-          # Your Heroku API key. This will be used for authentication. You can find it in your Heroku account settings
-          heroku_api_key: ${{ secrets.HEROKU_TOKEN }}
-          # The email of your Heroku account (needed for auth).
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
-          # The app name to use for deploying/updating
-          heroku_app_name:  ingalless-website
-          # The subfolder where your built code is sitted, e.g. `dist`.
-          appdir: strapi
+      
+      - name: Add remote for Heroku
+        run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/ingalless-website.git
+        
+      - name: Deploy backend to Heroku
+        run: git push heroku `git subtree split --prefix backend strapi`:refs/heads/main --force
