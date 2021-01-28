@@ -1,10 +1,32 @@
+import { GetStaticProps } from "next";
 import Link from "next/link";
+import { PassThrough } from "stream";
 import Contact from "../components/contact";
 import Layout from "../components/layout";
 import Nav from "../components/nav";
+import axios from "axios";
 import { LandingIllustration } from "../svg";
 
-export default function IndexPage() {
+interface Service {
+  id: number;
+  title: string;
+  description: string;
+}
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { data } = await axios.get(`${process.env.API_BASE}/services`);
+  return {
+    props: {
+      services: data,
+    },
+    revalidate: 30,
+  };
+};
+
+interface IndexProps {
+  services: Service[];
+}
+export default function IndexPage({ services }: IndexProps) {
   return (
     <Layout
       title="Foveal Development - Bespoke Web Development"
@@ -66,48 +88,14 @@ export default function IndexPage() {
             SERVICES
           </h3>
           <div className="block space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 gap-8">
-            <div>
-              <h4 className="text-2xl font-semibold text-gray-800">
-                Web Design and Development
-              </h4>
-              <p>
-                With 7 years experience in web design and development, 5 of
-                which are in industry, you'll receive a website or application
-                built just for you and your customers. We'd love to make your
-                ideas come to life whilst providing guidance and solutions on
-                speed, scalability and security. Cut through the competition.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold text-gray-800">JAMStack</h4>
-              <p>
-                The JAMStack is one of the web's emerging technologies - and for
-                good reason. Users love fast and highly-available websites and
-                so do search rankings. It's a win-win! Reduce website
-                abandonment and increase user satisfaction by working with us.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold text-gray-800">SEO</h4>
-              <p>
-                Ranking high on search engines can be a difficult and
-                time-consuming task. We're driven to get you ranking as high as
-                possible improving your content along the way and making sure
-                your users' privacy is protected.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-2xl font-semibold text-gray-800">
-                Development Consultancy and Outsourcing
-              </h4>
-              <p>
-                Have a legacy application that needs refactoring? Or perhaps you
-                need a new feature in your back-office systems? With deep
-                knowledge in programming languages across the stack and a strong
-                understanding of cloud application development we're committed
-                to keep your critical business systems running efficiently.
-              </p>
-            </div>
+            {services.map((service) => (
+              <div key={service.id}>
+                <h4 className="text-2xl font-semibold text-gray-800">
+                  {service.title}
+                </h4>
+                <p>{service.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </Section>
