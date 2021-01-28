@@ -18,7 +18,7 @@ jobs:
       #    working-directory: ./frontend
       
       - name: Install heroku cli
-        run: snap install --classic heroku
+        run: sudo snap install --classic heroku
       - name: Heroku Login
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
