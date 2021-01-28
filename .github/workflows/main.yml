@@ -29,7 +29,7 @@ jobs:
           # The branch that you would like to deploy to Heroku
           # branch: # optional, default is HEAD
           # Set this to true if want to use --force
-          # useforce: # optional
+          useforce: true
           # Set if your app is located in a subdirectory.
           appdir: ./strapi 
           # Contents of the Procfile to save and deploy
