@@ -22,8 +22,9 @@ export default function IndexPage() {
                 </span>
               </h2>
               <h3 className="text-gray-900 text-lg leading-snug">
-                2020 has demonstrated that having an online presence is more
-                important than ever before.
+                2020 has demonstrated that being online is more important than
+                ever before. Having a website that gets visits and performs well
+                is tricky.
                 <br />
                 <span className="font-semibold">
                   Let's keep your business succeeding together.
@@ -67,15 +68,14 @@ export default function IndexPage() {
           <div className="block space-y-8 lg:space-y-0 lg:grid lg:grid-cols-2 gap-8">
             <div>
               <h4 className="text-2xl font-semibold text-gray-800">
-                Web Development
+                Web Design and Development
               </h4>
               <p>
-                With 7 years experience in programming, 5 of which are in
-                industry, you'll receive a website or web application built just
-                for you and your users. We'd love to make your ideas come to
-                life whilst providing guidance and solutions on important
-                non-functional requirements including speed, scalability and
-                security.
+                With 7 years experience in web design and development, 5 of
+                which are in industry, you'll receive a website or application
+                built just for you and your customers. We'd love to make your
+                ideas come to life whilst providing guidance and solutions on
+                speed, scalability and security. Cut through the competition.
               </p>
             </div>
             <div>

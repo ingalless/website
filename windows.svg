@@ -1,0 +1,27 @@
+<svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1015 617">
+  <defs>
+    <linearGradient id="a" x1="223" y1="366.3" x2="223" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="gray" stop-opacity=".3"/>
+      <stop offset=".5" stop-color="gray" stop-opacity=".1"/>
+      <stop offset="1" stop-color="gray" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="b" x1="315" y1="481.7" x2="315" y2="115.4" gradientTransform="matrix(-1 0 0 1 1107 -115)" xlink:href="#a"/>
+    <linearGradient id="c" x1="508" y1="616.5" x2="508" y2="159.8" xlink:href="#a"/>
+  </defs>
+  <path fill="url(#a)" d="M0 0h446v366H0z" opacity=".5"/>
+  <path fill="#f2f2f2" d="M5 7h435v353H5z"/>
+  <path fill="#1e6acb" d="M5 7h435v79H5z"/>
+  <path opacity=".1" d="M5 7h435v79H5z"/>
+  <path fill="#e0e0e0" d="M40 114h366v46H40zM40 195h267v16H40zM40 222h173v16H40zM40 249h229v16H40zM40 275h267v16H40zM40 302h89v16H40z"/>
+  <path fill="url(#b)" d="M569 0h446v366H569z" opacity=".5"/>
+  <path fill="#f2f2f2" d="M1010 361H575V7h435z"/>
+  <path fill="#1e6acb" d="M1010 86H575V7h435z"/>
+  <path opacity=".1" d="M1010 86H575V7h435z"/>
+  <path fill="#e0e0e0" d="M975 160H609v-46h366zM975 211H709v-16h266zM975 237H802v-15h173zM975 264H746v-16h229zM975 291H709v-16h266zM975 317h-89v-15h89z"/>
+  <path fill="url(#c)" d="M230 160h556v457H230z" opacity=".5"/>
+  <path fill="#fff" d="M237 169h542v441H237z"/>
+  <path fill="#1e6acb" d="M237 169h542v98H237z"/>
+  <path fill="#f5f5f5" d="M280 302h456v57H280z"/>
+  <path fill="#e0e0e0" d="M280 403h333v19H280zM280 436h216v19H280zM280 470h285v19H280zM280 503h333v19H280zM280 537h111v19H280z"/>
+  <path fill="#69f0ae" d="M303 322h130v17H303z"/>
+</svg>
