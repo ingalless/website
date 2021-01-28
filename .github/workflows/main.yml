@@ -21,4 +21,4 @@ jobs:
         run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/ingalless-website.git
         
       - name: Deploy backend to Heroku
-        run: git push heroku `git subtree add --prefix backend strapi`:refs/heads/main --force
+        run: git push heroku `git subtree add --prefix=backend strapi`:refs/heads/main --force
