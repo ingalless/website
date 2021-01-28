@@ -16,14 +16,7 @@ jobs:
       #    vercel-org-id: ${{ secrets.ORG_ID}}  #Required
       #    vercel-project-id: ${{ secrets.PROJECT_ID}} #Required 
       #    working-directory: ./frontend
-      
-      - name: Install heroku cli
-        run: sudo snap install --classic heroku
       - name: Add remote
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
-        run: heroku git:remote -a ingalless-website  
+        run: git remote add heroku https://heroku:${{ secrets.HEROKU_TOKEN }}@git.heroku.com/ingalless-website.git
       - name: Deploy backend to Heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
         run: git subtree push --prefix strapi heroku main
